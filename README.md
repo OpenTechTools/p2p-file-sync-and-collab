@@ -1,1 +1,2 @@
-# p2p-file-sync-and-collab
+# Distributed peer-peer file versioning and collaboration system 
+

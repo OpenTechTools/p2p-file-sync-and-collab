@@ -1,0 +1,48 @@
+INFO:     Started server process [544410]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60996 - "GET / HTTP/1.1" 200 OK
+[USER] Deepanshu logged in
+INFO:     127.0.0.1:32768 - "POST /users/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55462 - "POST /repos HTTP/1.1" 200 OK
+[USER] Priya logged in
+INFO:     127.0.0.1:55478 - "POST /users/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55480 - "POST /repos/test-repo/collaborators HTTP/1.1" 200 OK
+[USER] Deepanshu requested commit: Initial commit by Deepanshu
+[CRDT] Checking authorization for Deepanshu
+[CRDT] Result: ALLOWED
+[MERKLE] Creating commit hash
+[MERKLE] Linking to previous commit: 32058a97d637...
+[SMPP] Signing commit
+[SMPP] Verifying signature
+[SMPP] Validation: VALID
+INFO:     127.0.0.1:34648 - "POST /repos/test-repo/commits HTTP/1.1" 200 OK
+[USER] Priya requested commit: Feature by Priya
+[CRDT] Checking authorization for Priya
+[CRDT] Result: ALLOWED
+[MERKLE] Creating commit hash
+[MERKLE] Linking to previous commit: 151d14ff6f4f...
+[SMPP] Signing commit
+[SMPP] Verifying signature
+[SMPP] Validation: VALID
+INFO:     127.0.0.1:34654 - "POST /repos/test-repo/commits HTTP/1.1" 200 OK
+[USER] Mohit logged in
+INFO:     127.0.0.1:59112 - "POST /users/login HTTP/1.1" 200 OK
+[USER] Mohit requested commit: Unauthorized attempt
+[CRDT] Checking authorization for Mohit
+[CRDT] Result: DENIED
+INFO:     127.0.0.1:59116 - "POST /repos/test-repo/commits HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39290 - "GET /repos/test-repo/commits HTTP/1.1" 200 OK
+[SYNC] Fetching from Peer A
+[SYNC] Validating via SMPP...
+[SYNC] CRDT merge complete
+[SYNC] Fetching from Peer B
+[SYNC] Validating via SMPP...
+[SYNC] CRDT merge complete
+[SYNC] Sync complete for repository: test-repo
+INFO:     127.0.0.1:39296 - "POST /repos/test-repo/sync HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36746 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36762 - "GET /repos HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36766 - "GET /repos/test-repo/collaborators HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36774 - "GET /peers HTTP/1.1" 200 OK
